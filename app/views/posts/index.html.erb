@@ -1,4 +1,11 @@
-<h1>Hello Ruby</h1>
+<h1>Atack Watch 掲示板</h1>
+
+<div class="search-container">
+  <%= form_tag(posts_path, method: :get) do %>
+    <%= text_field_tag :search, params[:search], placeholder: "検索", class: "search-input" %>
+    <%= submit_tag "検索", class: "search-button" %>
+  <% end %>
+</div>
 
 <div class="button-container">
   <%= link_to "新しい投稿", new_post_path, class: "link-button" %>

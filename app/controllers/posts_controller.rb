@@ -2,7 +2,12 @@ class PostsController < ApplicationController
     before_action :set_post, only: [:edit, :update, :destroy]
 
     def index
-        @posts = Post.all
+      if params[:search]
+        # @posts = Post.where("title LIKE ? AND deleted = false", "%#{params[:search]}%")
+        @posts = Post.where("title like '%#{params[:search]}%' AND deleted = false")
+      else
+        @posts = Post.where(deleted: false)
+      end
     end
 
     def new
@@ -31,7 +36,7 @@ class PostsController < ApplicationController
     end
 
     def destroy
-        @post.destroy
+        @post.update(deleted: true)
         redirect_to posts_path
     end
 
