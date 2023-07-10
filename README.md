@@ -1,24 +1,9 @@
-# README
+# attack-watch
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+研究用途
+SQLi脆弱性を意図的に存在させているWebアプリ
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 環境
+- Ruby on Rails
+- Supabase
